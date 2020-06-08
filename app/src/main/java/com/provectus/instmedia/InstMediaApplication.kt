@@ -18,7 +18,7 @@ class InstMediaApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        Timber.plant(DebugTree())
+        if (BuildConfig.DEBUG) Timber.plant(DebugTree())
 
         startKoin{
             androidContext(this@InstMediaApplication)
