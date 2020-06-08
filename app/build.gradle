@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion versions.compileSdk
+
+    defaultConfig {
+        applicationId "com.provectus.instmedia"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.code
+        versionName versions.name + "." + versions.build
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            versionNameSuffix '-d'
+            signingConfig signingConfigs.debug
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    lintOptions {
+        disable 'ContentDescription'
+    }
+
+}
+
+dependencies {
+    implementation libraries.kotlin
+
+    implementation libraries.appCompat
+    implementation libraries.coreKtx
+    implementation libraries.support
+
+    implementation libraries.koin
+    implementation libraries.koinScope
+    implementation libraries.koinJava
+
+    implementation libraries.moxyCore
+    implementation libraries.moxyAndorid
+    kapt libraries.moxyCompiler
+
+    implementation libraries.room
+    kapt libraries.roomCompiler
+    implementation libraries.roomRxJava
+
+    implementation libraries.preferenceRoom
+    annotationProcessor libraries.preferenceRoomAnnotations
+
+    implementation libraries.okHttp
+
+    implementation libraries.rxAndroid
+    implementation libraries.rxJava
+
+    implementation libraries.retrofit
+    implementation libraries.retrofitGsonConverter
+    implementation libraries.retrofitRxJavaAdapter
+
+    implementation libraries.gson
+
+    implementation libraries.firebaseCore
+
+    implementation libraries.materialDesign
+
+    implementation libraries.constraintLayout
+
+    implementation libraries.okHttpLoggingInterceptor
+    implementation libraries.timber
+    implementation libraries.glide
+    implementation libraries.threeTenAbp
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="amaranth">#EE3A57</color>
+    <color name="flamingo">#F16529</color>
+    <color name="golden_dream">#F1C929</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="emperor">#4F4F4F</color>
+    <color name="natural_gray">#95908E</color>
+</resources>
