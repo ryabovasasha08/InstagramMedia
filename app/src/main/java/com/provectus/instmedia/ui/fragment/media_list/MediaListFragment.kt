@@ -1,8 +1,6 @@
 package com.provectus.instmedia.ui.fragment.media_list
 
-import android.util.Log
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.GridLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.provectus.instmedia.R
@@ -24,7 +22,7 @@ class MediaListFragment : BaseFragment(), MediaListView {
 
     override fun setUpMediaRecyclerView(mediaListAdapter: MediaListAdapter) {
         mediaRecyclerView.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = GridLayoutManager(context, 2)
             adapter = mediaListAdapter
         }
     }
