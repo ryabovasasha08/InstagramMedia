@@ -3,5 +3,4 @@
     <string name="photo_counter">%s/%s</string>
     <string name="no_internet">No internet</string>
     <string name="no_internet_message">Please, turn on your network connection and try again</string>
-    <string name="cache_no_internet_message">Current data may be out-of-date. Please, turn on your network connection and pull to refresh data</string>
 </resources>
