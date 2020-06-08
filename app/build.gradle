@@ -80,6 +80,9 @@ dependencies {
 
     implementation libraries.constraintLayout
 
+    implementation libraries.stetho
+    implementation libraries.stethoOkHttp
+
     implementation libraries.okHttpLoggingInterceptor
     implementation libraries.timber
     implementation libraries.glide
