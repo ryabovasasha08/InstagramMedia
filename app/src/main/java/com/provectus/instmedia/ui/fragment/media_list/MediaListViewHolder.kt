@@ -56,13 +56,15 @@ class MediaListViewHolder(@NonNull itemView: View) : RecyclerView.ViewHolder(ite
         itemView.videoView.apply {
             setVideoURI(Uri.parse(url))
 
-            setOnPreparedListener {
+            setOnPreparedListener { mp ->
+                mp.setVolume(0F, 0F)
                 start()
                 showProgressBar(false)
             }
 
             setOnCompletionListener { mp ->
                 mp.reset()
+                mp.setVolume(0F, 0F)
                 setVideoURI(Uri.parse(url))
                 start()
             }
